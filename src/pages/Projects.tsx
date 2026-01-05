@@ -1,4 +1,4 @@
-import { motion, type Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { BiLogoGithub, BiLinkExternal, BiBox, BiShield, BiAnchor, BiServer } from 'react-icons/bi';
 import { SiNpm } from 'react-icons/si';
 import { useTheme } from '../context/ThemeContext';
@@ -46,30 +46,17 @@ const projects = [
 export default function Projects() {
     const { theme } = useTheme();
 
-    const containerVariants: Variants = {
-        hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.3 } }
-    };
-
-    const itemVariants: Variants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.2 } }
-    };
 
     return (
         <div className="w-full h-full flex flex-col items-center justify-start p-6 md:p-20 overflow-y-auto custom-scrollbar">
 
-            <motion.div
+            <div
                 className="max-w-2xl w-full pt-20 pb-20"
-                initial="hidden"
-                animate="visible"
-                variants={containerVariants}
             >
                 <div className="flex flex-col gap-5">
                     {projects.map((project) => (
                         <motion.div
                             key={project.title}
-                            variants={itemVariants}
                             whileHover={{ y: -2 }}
                             className={clsx(
                                 "group relative p-5 md:p-6 rounded-2xl border transition-all duration-300 w-full",
@@ -162,7 +149,7 @@ export default function Projects() {
                         </motion.div>
                     ))}
                 </div>
-            </motion.div>
+            </div>
         </div>
     );
 }
