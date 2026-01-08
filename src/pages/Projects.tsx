@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { BiLogoGithub, BiLinkExternal, BiBox, BiShield, BiAnchor, BiServer } from 'react-icons/bi';
+import { BiLogoGithub, BiLinkExternal, BiBox, BiShield, BiAnchor, BiServer, BiPackage } from 'react-icons/bi';
 import { SiNpm } from 'react-icons/si';
 import { useTheme } from '../context/ThemeContext';
 import clsx from 'clsx';
@@ -29,6 +29,15 @@ const projects = [
         desc: 'Real-time hardware and privacy monitoring desktop app using Electron & Python.',
         icon: BiShield,
         repo: 'https://github.com/MatheusCampagnolo/tech-sentinel',
+        deploy: null,
+        npm: null
+    },
+    {
+        title: 'Kargo',
+        image: '',
+        desc: 'Robust Inventory Management System API built with Spring Boot 3, Java 17, and PostgreSQL.',
+        icon: BiPackage,
+        repo: 'https://github.com/MatheusCampagnolo/kargo',
         deploy: null,
         npm: null
     },
