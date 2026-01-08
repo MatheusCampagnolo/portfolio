@@ -62,13 +62,13 @@ export default function Projects() {
             <div
                 className="max-w-2xl w-full pt-20 pb-20"
             >
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-3">
                     {projects.map((project) => (
                         <motion.div
                             key={project.title}
                             whileHover={{ y: -2 }}
                             className={clsx(
-                                "group relative p-5 md:p-6 rounded-2xl border transition-all duration-300 w-full",
+                                "group relative p-4 rounded-2xl border transition-all duration-300 w-full",
                                 theme === 'dark'
                                     ? "bg-white/5 border-white/10 hover:border-white/20 hover:bg-white/10"
                                     : "bg-white border-black/5 shadow-sm hover:shadow-md"
@@ -81,24 +81,24 @@ export default function Projects() {
                                         <img
                                             src={project.image}
                                             alt={project.title}
-                                            className="w-12 h-12 min-w-[3rem] rounded-xl object-cover border border-black/5"
+                                            className="w-10 h-10 min-w-[2.5rem] rounded-xl object-cover border border-black/5"
                                         />
                                     ) : (
                                         <div className={clsx(
-                                            "w-12 h-12 min-w-[3rem] rounded-xl flex items-center justify-center transition-colors",
+                                            "w-10 h-10 min-w-[2.5rem] rounded-xl flex items-center justify-center transition-colors",
                                             theme === 'dark' ? "bg-blue-500/20 text-blue-300" : "bg-blue-100 text-blue-600"
                                         )}>
-                                            <project.icon size={24} />
+                                            <project.icon size={20} />
                                         </div>
                                     )}
                                 </div>
 
                                 {/* Content */}
                                 <div className="flex-grow">
-                                    <h3 className={clsx("text-xl font-bold mb-1", theme === 'dark' ? "text-white" : "text-anthracite")}>
+                                    <h3 className={clsx("text-lg font-bold mb-1", theme === 'dark' ? "text-white" : "text-anthracite")}>
                                         {project.title}
                                     </h3>
-                                    <p className={clsx("text-sm leading-relaxed mb-4", theme === 'dark' ? "text-pearl/70" : "text-anthracite/70")}>
+                                    <p className={clsx("text-sm leading-relaxed mb-3", theme === 'dark' ? "text-pearl/70" : "text-anthracite/70")}>
                                         {project.desc}
                                     </p>
 
