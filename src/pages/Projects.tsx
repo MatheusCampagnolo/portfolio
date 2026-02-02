@@ -3,6 +3,7 @@ import { BiLogoGithub, BiLinkExternal, BiBox, BiShield, BiAnchor, BiServer, BiPa
 import { SiNpm } from 'react-icons/si';
 import { useTheme } from '../context/ThemeContext';
 import clsx from 'clsx';
+import { SEO } from '../components/SEO';
 
 const projects = [
     {
@@ -58,6 +59,10 @@ export default function Projects() {
 
     return (
         <div className="w-full h-full flex flex-col items-center justify-start p-6 md:p-20 overflow-y-auto custom-scrollbar">
+            <SEO
+                title="Projects"
+                description="Explore my portfolio projects: Kaelum.js, Nautilis, TechSentinel, and more."
+            />
 
             <div
                 className="max-w-2xl w-full pt-20 pb-20"

@@ -3,6 +3,7 @@ import { DotGrid } from '../components/DotGrid';
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import clsx from 'clsx';
+import { SEO } from '../components/SEO';
 
 import {
     BiLogoReact,
@@ -51,6 +52,11 @@ export default function Home() {
         <div className="relative w-full h-full flex items-center justify-start px-8 md:px-20 lg:px-32">
             {/* Background */}
             <DotGrid />
+
+            <SEO
+                title="Home"
+                description="Portfolio of Matheus Messias - Full Stack Developer specializing in Modern Web Technologies."
+            />
 
             {/* Content */}
             <motion.div
