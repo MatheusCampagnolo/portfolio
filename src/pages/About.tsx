@@ -40,7 +40,7 @@ export default function About() {
                         theme === 'dark' ? "border-white/10" : "border-white/50"
                     )}>
                         <img
-                            src="https://media.licdn.com/dms/image/v2/D4D03AQG3wtgu5YlXnw/profile-displayphoto-crop_800_800/B4DZtx4a7sK0AI-/0/1767142176553?e=1769040000&v=beta&t=mPSe75X1gjgQb8y-mPoY3LRMhWl5KKBteVDXNn8OIAI"
+                            src="https://media.licdn.com/dms/image/v2/D4D03AQG3wtgu5YlXnw/profile-displayphoto-scale_400_400/B4DZtx4a7sK0Ag-/0/1767142176659?e=1773273600&v=beta&t=e-mNwRf5G2j8OQ92GQLnoM1_sub8CMmT4Pr6N3ZIHMc"
                             alt="Matheus Messias"
                             className="w-full h-full object-cover"
                         />
