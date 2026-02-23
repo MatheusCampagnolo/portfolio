@@ -81,7 +81,7 @@ export function Process() {
           {/* Connecting Line */}
           <div className="absolute left-8 top-8 bottom-8 w-1 bg-gradient-to-b from-indigo-500 via-purple-500 to-transparent md:left-1/2 md:-ml-0.5" />
 
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-12 md:gap-12">
             {steps.map((step, index) => (
               <motion.div
                 key={index}
@@ -89,30 +89,27 @@ export function Process() {
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 className={cn(
-                  "relative flex flex-col md:flex-row gap-8 items-center",
+                  "relative flex flex-col md:flex-row gap-8 md:items-center",
                   index % 2 === 0 ? "md:flex-row-reverse" : ""
                 )}
               >
+                {/* Center Icon/Node for Mobile (Absolute) and Desktop (Relative) */}
+                <div className="absolute left-0 top-6 md:relative md:top-auto md:left-auto flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-4 border-black bg-slate-900 shadow-xl z-10 md:mx-auto">
+                  <div className={cn("absolute inset-0 rounded-full opacity-20 animate-pulse", step.color)} />
+                  <step.icon className="h-6 w-6 text-white" />
+                </div>
+
                 {/* Content Card */}
-                <div className="flex-1 w-full">
+                <div className="flex-1 w-full pl-20 md:pl-0">
                   <div className="group relative p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-all hover:bg-white/10 backdrop-blur-sm">
                     <div className={cn("absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500", step.color)} />
                     <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-3">
-                      <span className="md:hidden flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-xs">
-                        {index + 1}
-                      </span>
                       {step.title}
                     </h3>
-                    <p className="text-slate-400 leading-relaxed">
+                    <p className="text-slate-400 leading-relaxed text-sm md:text-base">
                       {step.description}
                     </p>
                   </div>
-                </div>
-
-                {/* Center Icon/Node */}
-                <div className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-4 border-black bg-slate-900 shadow-xl z-10">
-                  <div className={cn("absolute inset-0 rounded-full opacity-20 animate-pulse", step.color)} />
-                  <step.icon className="h-6 w-6 text-white" />
                 </div>
 
                 {/* Spacer for alternating layout */}

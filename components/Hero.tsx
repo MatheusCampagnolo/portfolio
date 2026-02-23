@@ -116,7 +116,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="bg-gradient-to-b from-white via-white/90 to-white/50 bg-clip-text text-5xl font-bold tracking-tight text-transparent sm:text-7xl md:text-8xl"
+          className="bg-gradient-to-b from-white via-white/90 to-white/50 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl md:text-8xl"
         >
           Matheus Messias
         </motion.h1>
@@ -125,7 +125,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="max-w-2xl text-lg text-slate-400 sm:text-xl"
+          className="max-w-2xl text-base text-slate-400 sm:text-xl"
         >
           Desenvolvedor Full Stack apaixonado por criar experiências digitais imersivas e performáticas. Especialista em Java, Node.js, React e arquitetura escalável.
         </motion.p>
@@ -134,17 +134,17 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 mt-8"
+          className="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto px-4 sm:px-0"
         >
           <Link
             href="/projetos"
-            className="px-8 py-4 rounded-full bg-white text-black font-bold hover:bg-slate-200 hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]"
+            className="w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-black font-bold hover:bg-slate-200 hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]"
           >
             Ver Meus Projetos
           </Link>
           <Link
             href="/contato"
-            className="px-8 py-4 rounded-full bg-white/5 border border-white/20 hover:bg-white/10 hover:border-white/30 transition-all font-medium text-white backdrop-blur-md"
+            className="w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white/5 border border-white/20 hover:bg-white/10 hover:border-white/30 transition-all font-medium text-white backdrop-blur-md"
           >
             Entrar em Contato
           </Link>
