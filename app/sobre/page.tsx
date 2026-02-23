@@ -56,6 +56,7 @@ export default function SobrePage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <PillarCard
+                            index={0}
                             icon={Globe}
                             title="Front-End Premium"
                             color="text-emerald-400"
@@ -63,6 +64,7 @@ export default function SobrePage() {
                             desc="Desenvolvimento de interfaces modernas, animações fluidas (Framer Motion) e estilos consistentes focados totalmente na conversão e retenção do usuário."
                         />
                         <PillarCard
+                            index={1}
                             icon={Cpu}
                             title="Engenharia de Back-End"
                             color="text-blue-400"
@@ -70,6 +72,7 @@ export default function SobrePage() {
                             desc="Construção de APIs resilientes, clean architecture, engenharia de software aplicada, desenvolvimento de sistemas completos e modelagem de bancos de dados."
                         />
                         <PillarCard
+                            index={2}
                             icon={Heart}
                             title="Inovação & IA"
                             color="text-purple-400"
@@ -88,6 +91,7 @@ export default function SobrePage() {
                     <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-700 before:to-transparent">
 
                         <TimelineItem
+                            index={0}
                             align="left"
                             year="2026 - Presente"
                             title="Consultor Web Autônomo"
@@ -95,6 +99,7 @@ export default function SobrePage() {
                         />
 
                         <TimelineItem
+                            index={1}
                             align="right"
                             year="2026 - Presente"
                             title="Ciência da Computação (Max Planck)"
@@ -102,6 +107,7 @@ export default function SobrePage() {
                         />
 
                         <TimelineItem
+                            index={2}
                             align="left"
                             year="2025"
                             title="Criador do Kaelum & Iniciação Científica"
@@ -109,6 +115,7 @@ export default function SobrePage() {
                         />
 
                         <TimelineItem
+                            index={3}
                             align="right"
                             year="2023 - 2024"
                             title="Técnico em Informática (IFSP)"
@@ -116,6 +123,7 @@ export default function SobrePage() {
                         />
 
                         <TimelineItem
+                            index={4}
                             align="left"
                             year="O Início"
                             title="Curiosidade & Game Mods"
@@ -131,9 +139,15 @@ export default function SobrePage() {
     );
 }
 
-function PillarCard({ icon: Icon, title, desc, color, border }: any) {
+function PillarCard({ icon: Icon, title, desc, color, border, index = 0 }: any) {
     return (
-        <div className={`group p-8 rounded-3xl bg-white/5 border border-white/10 ${border} transition-all hover:bg-white/10 hover:-translate-y-2 backdrop-blur-sm`}>
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className={`group p-8 rounded-3xl bg-white/5 border border-white/10 ${border} transition-all hover:bg-white/10 hover:-translate-y-2 backdrop-blur-sm`}
+        >
             <div className={`h-14 w-14 rounded-2xl bg-slate-800 flex items-center justify-center mb-6 border border-white/5 shadow-inner`}>
                 <Icon className={`w-7 h-7 ${color}`} />
             </div>
@@ -141,13 +155,19 @@ function PillarCard({ icon: Icon, title, desc, color, border }: any) {
             <p className="text-slate-400 leading-relaxed text-sm">
                 {desc}
             </p>
-        </div>
+        </motion.div>
     );
 }
 
-function TimelineItem({ year, title, desc, align = "left" }: { year: string, title: string, desc: string, align?: "left" | "right" }) {
+function TimelineItem({ year, title, desc, align = "left", index = 0 }: { year: string, title: string, desc: string, align?: "left" | "right", index?: number }) {
     return (
-        <div className="relative flex items-center justify-between md:justify-normal group is-active">
+        <motion.div
+            initial={{ opacity: 0, x: align === "left" ? -50 : 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            className="relative flex items-center justify-between md:justify-normal group is-active"
+        >
             {/* Timeline dot */}
             <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-black bg-indigo-500 absolute left-0 md:left-1/2 -translate-x-1/2 shadow-lg shadow-indigo-500/40 z-10 transition-transform group-hover:scale-110" />
 
@@ -157,6 +177,6 @@ function TimelineItem({ year, title, desc, align = "left" }: { year: string, tit
                 <h4 className="text-lg font-bold text-white mb-2">{title}</h4>
                 <p className="text-slate-400 text-sm leading-relaxed">{desc}</p>
             </div>
-        </div>
+        </motion.div>
     );
 }
