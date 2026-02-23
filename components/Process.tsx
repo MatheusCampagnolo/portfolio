@@ -93,12 +93,6 @@ export function Process() {
                   index % 2 === 0 ? "md:flex-row-reverse" : ""
                 )}
               >
-                {/* Center Icon/Node for Mobile (Absolute) and Desktop (Relative) */}
-                <div className="absolute left-0 top-6 md:relative md:top-auto md:left-auto flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-4 border-black bg-slate-900 shadow-xl z-10 md:mx-auto">
-                  <div className={cn("absolute inset-0 rounded-full opacity-20 animate-pulse", step.color)} />
-                  <step.icon className="h-6 w-6 text-white" />
-                </div>
-
                 {/* Content Card */}
                 <div className="flex-1 w-full pl-20 md:pl-0">
                   <div className="group relative p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-all hover:bg-white/10 backdrop-blur-sm">
@@ -110,6 +104,12 @@ export function Process() {
                       {step.description}
                     </p>
                   </div>
+                </div>
+
+                {/* Center Icon/Node for Mobile (Absolute) and Desktop (Relative) */}
+                <div className="absolute left-0 top-6 md:relative md:top-auto md:left-auto flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-4 border-black bg-slate-900 shadow-xl z-10 md:mx-auto">
+                  <div className={cn("absolute inset-0 rounded-full opacity-20 animate-pulse", step.color)} />
+                  <step.icon className="h-6 w-6 text-white" />
                 </div>
 
                 {/* Spacer for alternating layout */}
