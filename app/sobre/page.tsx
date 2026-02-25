@@ -117,7 +117,7 @@ export default function SobrePage() {
                         <TimelineItem
                             index={3}
                             align="right"
-                            year="2023 - 2024"
+                            year="2023 - 2025"
                             title="Técnico em Informática (IFSP)"
                             desc="Imersão pesada em desenvolvimento Full Stack e Engenharia de Software. Base sólida pavimentada em Java, Python, JavaScript, Node.js, Spring Boot e relacionais como PostgreSQL."
                         />
