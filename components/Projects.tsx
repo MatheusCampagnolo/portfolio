@@ -22,8 +22,8 @@ const projects: ProjectType[] = [
     description: "Framework Node.js ultrarrápido com roteamento recursivo e suporte nativo a SSR minimalista. Projetado para simplificar a criação de páginas web e APIs RESTful, encapsulando boilerplate comum do Express.",
     tech: ["Node.js", "Express"],
     image: "/project1.jpg", // Placeholder
-    github: "https://github.com/MatheusCampagnolo/kaelum/",
-    live: "https://matheuscampagnolo.github.io/kaelum/",
+    github: "https://github.com/kaelumjs/kaelum",
+    live: "https://kaelumjs.vercel.app/",
     color: "from-blue-500 to-cyan-500",
     logo: "/logos/kaelum.jpg",
   },
