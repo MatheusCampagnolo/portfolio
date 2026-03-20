@@ -5,6 +5,8 @@ import { Process } from "@/components/Process";
 import { Projects } from "@/components/Projects";
 import { Footer } from "@/components/Footer";
 
+import { Analytics } from '@vercel/analytics/next';
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col bg-black">
@@ -14,6 +16,7 @@ export default function Home() {
       <Process />
       <Projects />
       <Footer />
+      <Analytics />
     </main>
   );
 }
