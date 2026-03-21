@@ -25,6 +25,7 @@ const projects: ProjectType[] = [
     live: "https://kaelumjs.vercel.app/",
     color: "from-blue-500 to-cyan-500",
     logo: "/logos/kaelum.jpg",
+    image: ""
   },
   {
     title: "Kargo Inventory API",
@@ -33,6 +34,7 @@ const projects: ProjectType[] = [
     github: "https://github.com/MatheusCampagnolo/kargo",
     live: "#",
     color: "from-emerald-500 to-teal-500",
+    image: ""
   },
   {
     title: "TechSentinel",
@@ -41,6 +43,7 @@ const projects: ProjectType[] = [
     github: "https://github.com/MatheusCampagnolo/tech-sentinel",
     live: "#",
     color: "from-purple-500 to-indigo-500",
+    image: ""
   },
 ];
 
