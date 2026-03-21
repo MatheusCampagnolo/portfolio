@@ -1,16 +1,29 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaReact, FaPython, FaJava, FaNodeJs } from "react-icons/fa";
-import { SiTypescript, SiJavascript, SiSpringboot, SiNextdotjs, SiTailwindcss, SiPostgresql, SiMongodb, SiDocker, SiGit } from "react-icons/si";
+import { 
+  SiReact, 
+  SiNextdotjs, 
+  SiTypescript, 
+  SiNodedotjs, 
+  SiJavascript, 
+  SiPython, 
+  SiSpringboot, 
+  SiTailwindcss, 
+  SiPostgresql, 
+  SiMongodb, 
+  SiDocker, 
+  SiGit 
+} from "react-icons/si";
+import { FaJava } from "react-icons/fa";
 
 const techStack = [
-  { name: "React", icon: FaReact, color: "text-cyan-400" },
+  { name: "React", icon: SiReact, color: "text-cyan-400" },
   { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
   { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
-  { name: "Node.js", icon: FaNodeJs, color: "text-green-500" },
+  { name: "Node.js", icon: SiNodedotjs, color: "text-green-500" },
   { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
-  { name: "Python", icon: FaPython, color: "text-blue-400" },
+  { name: "Python", icon: SiPython, color: "text-blue-400" },
   { name: "Java", icon: FaJava, color: "text-red-500" },
   { name: "Spring Boot", icon: SiSpringboot, color: "text-green-600" },
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-teal-400" },
@@ -22,7 +35,7 @@ const techStack = [
 
 export function Stack() {
   return (
-    <section className="py-20 bg-black/80 overflow-hidden relative">
+    <section className="py-20 bg-black overflow-hidden relative">
       <div className="container mx-auto px-4 text-center mb-12">
         <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-300 to-slate-500 mb-4">
           Tech Stack

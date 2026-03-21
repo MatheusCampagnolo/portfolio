@@ -4,6 +4,8 @@ import { Stack } from "@/components/Stack";
 import { Process } from "@/components/Process";
 import { Projects } from "@/components/Projects";
 import { Footer } from "@/components/Footer";
+import { Journey } from "@/components/Journey";
+import { VisualBreak } from "@/components/VisualBreak";
 
 import { Analytics } from '@vercel/analytics/next';
 
@@ -13,7 +15,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Stack />
+      <VisualBreak />
       <Process />
+      <Journey />
       <Projects />
       <Footer />
       <Analytics />

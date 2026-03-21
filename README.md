@@ -6,19 +6,22 @@ Este é o repositório do meu portfólio pessoal e profissional acadêmico, cons
 
 O projeto foi desenvolvido sob a arquitetura de roteamento multi-page (App Router) moderna, garantindo fluidez semelhante a uma SPA, mas com SEO otimizado.
 
-- **Framework Core:** [Next.js 16 (App Router)](https://nextjs.org/) + React 19
+- **Framework Core:** [Next.js 15 (App Router)](https://nextjs.org/) + React 19
 - **Linguagem:** TypeScript (Strict Mode)
 - **Estilização:** Tailwind CSS v4 + Tailwind Merge + clsx
-- **Animações (Micro-interações):** Framer Motion
+- **Animações & Interações:** Framer Motion (Micro-interações) + Lenis (Smooth Scrolling)
+- **Efeitos Visuais:** Three.js (Partículas e Superfícies 3D)
 - **Ícones:** Lucide React & React Icons
 - **Tipografia:** Inter (via `next/font`)
+- **Analytics:** Vercel Analytics
 
 ## 🎨 Funcionalidades de Destaque
 
 - **Design Premium ("Glassmorphism"):** Uso inteligente de transparências, bordas translúcidas e fades, garantindo forte harmonia de contraste no modo escuro.
 - **Transições Inter-Rotas Dinâmicas:** Animação sofisticada da "Pílula Mágica" no `<Navbar />` controlada pelo estado de rota ativa (Framer Motion `layoutId`).
+- **Efeitos Visuais Imersivos:** Fundo de partículas interativas no Hero, tipografia animada e seção de "Zoom Parallax" para exibição de projetos reais (otimizada e condicional para Desktop).
 - **Performance Optimizada:** Listagem condicional (expansão) do grid de projetos, Lazy Loading, SSR mínimo onde exigido e Otimização Nativa de Imagens (`next/image`).
-- **Responsive-First:** Todas as quebras de layout (Grid, flexboxes de Timeline, menus laterais ocultos) planejadas detalhadamente desde resoluções de Desktop em 4K até Mobile.
+- **Responsive-First:** Todas as quebras de layout (Grid, flexboxes de Timeline, menus laterais ocultos) planejadas detalhadamente desde resoluções de Desktop em 4K até Mobile, garantindo que animações complexas sejam desativadas ou adaptadas em telas menores para melhor UX.
 
 ## 💻 Como Rodar Localmente
 

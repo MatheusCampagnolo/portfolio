@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { ThemeProvider } from "next-themes";
 
 const geistSans = Geist({
   variable: "--font-sans",
@@ -16,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Matheus Messias | Full Stack Developer",
   description: "Portfólio Profissional de Matheus Messias - Desenvolvedor Full Stack especializado em React, Next.js, Python, Java e mais.",
-  keywords: ["Full Stack", "Java", "Python", "Spring Boot", "Node.js", "Developer", "React", "Next.js", "Portfolio", "Matheus Messias", "Matheus Campagnolo", "CodeMatth"],
+  keywords: ["Full Stack", "Java", "Python", "Spring Boot", "Node.js", "Developer", "React", "Next.js", "Portfolio", "Matheus Messias", "Matheus Campagnolo", "CodeMatth", "MatthCodes"],
 };
 
 export default function RootLayout({
@@ -25,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className="dark scroll-smooth">
+    <html lang="pt-BR" suppressHydrationWarning className="dark scroll-smooth">
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased text-foreground selection:bg-primary selection:text-primary-foreground",
@@ -33,9 +34,11 @@ export default function RootLayout({
           geistMono.variable
         )}
       >
-        <div className="relative flex min-h-screen flex-col">
-          {children}
-        </div>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+          <div className="relative flex min-h-screen flex-col">
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

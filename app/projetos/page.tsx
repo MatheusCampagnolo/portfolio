@@ -6,8 +6,8 @@ import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { DotGrid } from "@/components/ui/DotGrid";
 import { ExpandableProjectList } from "@/components/ui/ExpandableProjectList";
+import { DottedSurface } from "@/components/ui/dotted-surface";
 
 const advancedProjects = [
     {
@@ -78,21 +78,11 @@ const webDevProjects = [
 
 export default function ProjetosPage() {
     return (
-        <main className="flex min-h-screen flex-col bg-black">
+        <main className="flex min-h-screen flex-col bg-black relative">
+            <DottedSurface className="opacity-30" />
             <Navbar />
 
             <section className="relative pt-32 pb-16 px-4 overflow-hidden min-h-[40vh] flex items-center justify-center">
-                {/* Decorative Grid */}
-                <div
-                    className="absolute inset-0 z-0"
-                    style={{
-                        maskImage: "linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)",
-                        WebkitMaskImage: "linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)"
-                    }}
-                >
-                    <DotGrid opacity={0.06} className="bg-gradient-to-b from-transparent via-purple-900/10 to-transparent" />
-                </div>
-
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -125,7 +115,7 @@ export default function ProjetosPage() {
             </section>
 
             {/* Web Dev Projects */}
-            <section className="py-16 px-4 relative z-10 bg-slate-900/20">
+            <section className="py-16 px-4 relative z-10">
                 <div className="container mx-auto">
                     <div className="mb-12 border-l-4 border-emerald-500 pl-4">
                         <h2 className="text-3xl font-bold text-white mb-2">Web Design & Institucional</h2>
@@ -140,7 +130,7 @@ export default function ProjetosPage() {
                 </div>
             </section>
 
-            <section className="py-24 px-4 text-center">
+            <section className="py-24 px-4 text-center relative z-10">
                 <div className="container mx-auto">
                     <h3 className="text-2xl font-bold text-white mb-8">Quer explorar mais do meu código?</h3>
                     <a
@@ -162,57 +152,57 @@ export default function ProjetosPage() {
 
 function ProjectCard({ project }: { project: any }) {
     return (
-        <div className="group relative rounded-3xl bg-slate-900/50 border border-white/10 overflow-hidden hover:border-white/20 transition-all hover:-translate-y-1 flex flex-col h-full">
+        <div className="group relative rounded-3xl bg-[#0a0a0a] border border-white/10 overflow-hidden hover:border-white/20 transition-all hover:-translate-y-1 flex flex-col h-full">
+            {/* Gradient Background Effect on Hover */}
             <div className={`absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500 bg-gradient-to-br ${project.color}`} />
 
+            {/* Image Banner (if exists) */}
             {project.image && (
-                <div className="relative w-full h-48 overflow-hidden border-b border-white/5">
-                    {/* Placeholder image visualization (skeleton/gradient) while actual images are not provided */}
-                    <div className="absolute inset-0 bg-slate-800/80 animate-pulse" />
-                    <div
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-105"
-                        style={{ backgroundImage: `url(${project.image})` }}
+                <div className="relative w-full h-48 overflow-hidden">
+                    <Image 
+                        src={project.image} 
+                        alt={project.title} 
+                        fill 
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    {/* Shadow overlay for depth */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
                 </div>
             )}
 
-            <div className="relative p-8 flex-grow flex flex-col z-10 bg-slate-900/30 backdrop-blur-sm">
+            <div className={`relative p-8 flex-grow flex flex-col z-10 ${project.image ? 'pt-4' : ''}`}>
                 <div className="mb-6 flex items-center justify-between">
-                    {!project.image && (
-                        <div className={`relative h-12 w-12 rounded-full flex items-center justify-center bg-gradient-to-br ${project.color} opacity-80 shadow-lg overflow-hidden`}>
-                            {project.logo ? (
-                                <Image src={project.logo} alt={`${project.title} logo`} fill className="object-cover" />
-                            ) : (
-                                <span className="font-bold text-white text-xl">{project.title[0]}</span>
-                            )}
-                        </div>
+                  <div className={`relative h-12 w-12 rounded-xl flex items-center justify-center bg-gradient-to-br ${project.color} shadow-lg overflow-hidden border border-white/20`}>
+                    {project.logo ? (
+                      <Image src={project.logo} alt={`${project.title} logo`} fill className="object-cover" />
+                    ) : (
+                      <span className="font-bold text-white text-xl">{project.title[0]}</span>
                     )}
-                    {project.image && (
-                        <div className="flex-grow" /> // Spacer to align icons to right when image is present
+                  </div>
+                  <div className="flex gap-3">
+                    {project.github && project.github !== "#" && (
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors bg-white/5 p-2.5 rounded-full hover:bg-white/10 border border-white/10">
+                        <Github className="h-5 w-5" />
+                      </a>
                     )}
-                    <div className="flex gap-4">
-                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors bg-white/5 p-2 rounded-full hover:bg-white/10">
-                            <Github className="h-5 w-5" />
-                        </a>
-                        <a href={project.live} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors bg-white/5 p-2 rounded-full hover:bg-white/10">
-                            <ExternalLink className="h-5 w-5" />
-                        </a>
-                    </div>
+                    {project.live && project.live !== "#" && (
+                      <a href={project.live} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors bg-white/5 p-2.5 rounded-full hover:bg-white/10 border border-white/10">
+                        <ExternalLink className="h-5 w-5" />
+                      </a>
+                    )}
+                  </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-slate-400 transition-all">
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-slate-300 transition-all">
                     {project.title}
                 </h3>
 
-                <p className="text-slate-400 mb-6 flex-grow leading-relaxed text-sm">
+                <p className="text-slate-400 mb-8 flex-grow leading-relaxed text-sm">
                     {project.description}
                 </p>
 
                 <div className="flex flex-wrap gap-2 mt-auto">
                     {project.tech.map((t: string, i: number) => (
-                        <span key={i} className="px-3 py-1 text-xs font-medium rounded-full bg-white/5 border border-white/10 text-slate-300">
+                        <span key={i} className="px-3 py-1.5 text-xs font-medium rounded-full bg-white/5 border border-white/10 text-slate-300">
                             {t}
                         </span>
                     ))}

@@ -44,7 +44,6 @@ export const DotGrid: React.FC<DotGridProps> = ({ opacity = 0.05, className = ""
             mouse.y = e.clientY - rect.top;
         };
 
-        // Bind to window to capture mouse movements across the whole viewport overlaying the section
         window.addEventListener('mousemove', handleMouseMove);
 
         const spacing = 25;

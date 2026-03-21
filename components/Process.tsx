@@ -50,7 +50,7 @@ export function Process() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="process" className="relative w-full py-24 px-4 bg-black/50 overflow-hidden">
+    <section id="process" className="relative w-full py-24 px-4 bg-black overflow-hidden">
       {/* Interactive DotGrid Background with Top/Bottom Fades */}
       <div
         className="absolute inset-0 z-0"
