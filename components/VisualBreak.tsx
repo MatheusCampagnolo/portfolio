@@ -28,7 +28,7 @@ export function VisualBreak() {
 			alt: 'Projeto Fotografia',
 		},
 		{
-			src: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80',
+			src: 'https://www.shutterstock.com/shutterstock/videos/3889963451/thumb/1.jpg?ip=x480',
 			alt: 'Código',
 		},
 		{
@@ -36,7 +36,7 @@ export function VisualBreak() {
 			alt: 'Projeto Tech Sentinel',
 		},
 		{
-			src: '/projects/odonto-model.png',
+			src: '/projects/odonto2.png',
 			alt: 'Projeto OdontoLumi',
 		},
 		{

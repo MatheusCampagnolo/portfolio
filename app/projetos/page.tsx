@@ -39,13 +39,13 @@ const advancedProjects = [
 
 const webDevProjects = [
     {
-        title: "Nautilis - IFCiência",
-        description: "Plataforma web educativa e interativa sobre os oceanos. Apresenta mapa visual, player de áudio imersivo, base de dados geográfica rica e carrosséis dinâmicos de vida marinha, desenhada de forma responsiva.",
-        tech: ["HTML5", "CSS3", "JavaScript", "Node.js", "Express"],
-        github: "https://github.com/MatheusCampagnolo/nautilis",
-        live: "https://nautilis.vercel.app/",
-        color: "from-sky-400 to-blue-600",
-        image: "/projects/nautilis.png",
+        title: "EngPrime - Engenharia Diagnóstica",
+        description: "Landing page EXEMPLO premium para serviços de engenharia diagnóstica, perícias e avaliações. Design clean e corporativo com animações fluidas de scroll, glassmorphism e paleta de cores focada em confiança e precisão técnica.",
+        tech: ["Next.js", "React", "TailwindCSS", "Framer Motion", "TypeScript"],
+        //github: "#",
+        live: "https://landing-eng-model.vercel.app/",
+        color: "from-slate-800 to-slate-950",
+        image: "/projects/eng_model.png",
     },
     {
         title: "Gabriel Phos - Fotografia Fine Art",
@@ -62,7 +62,7 @@ const webDevProjects = [
         tech: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
         //github: "#",
         live: "https://landing-odonto-model.vercel.app",
-        color: "from-teal-500 to-teal-700", 
+        color: "from-teal-500 to-teal-700",
         image: "/projects/odonto-model.png",
     },
     {
@@ -74,6 +74,15 @@ const webDevProjects = [
         color: "from-orange-500 to-rose-600",
         image: "/projects/pizza_model.png",
     },
+    {
+        title: "Nautilis - IFCiência",
+        description: "Plataforma web educativa e interativa sobre os oceanos. Apresenta mapa visual, player de áudio imersivo, base de dados geográfica rica e carrosséis dinâmicos de vida marinha, desenhada de forma responsiva.",
+        tech: ["HTML5", "CSS3", "JavaScript", "Node.js", "Express"],
+        github: "https://github.com/MatheusCampagnolo/nautilis",
+        live: "https://nautilis.vercel.app/",
+        color: "from-sky-400 to-blue-600",
+        image: "/projects/nautilis.png",
+    }
 ];
 
 export default function ProjetosPage() {
@@ -159,10 +168,10 @@ function ProjectCard({ project }: { project: any }) {
             {/* Image Banner (if exists) */}
             {project.image && (
                 <div className="relative w-full h-48 overflow-hidden">
-                    <Image 
-                        src={project.image} 
-                        alt={project.title} 
-                        fill 
+                    <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
@@ -171,25 +180,25 @@ function ProjectCard({ project }: { project: any }) {
 
             <div className={`relative p-8 flex-grow flex flex-col z-10 ${project.image ? 'pt-4' : ''}`}>
                 <div className="mb-6 flex items-center justify-between">
-                  <div className={`relative h-12 w-12 rounded-xl flex items-center justify-center bg-gradient-to-br ${project.color} shadow-lg overflow-hidden border border-white/20`}>
-                    {project.logo ? (
-                      <Image src={project.logo} alt={`${project.title} logo`} fill className="object-cover" />
-                    ) : (
-                      <span className="font-bold text-white text-xl">{project.title[0]}</span>
-                    )}
-                  </div>
-                  <div className="flex gap-3">
-                    {project.github && project.github !== "#" && (
-                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors bg-white/5 p-2.5 rounded-full hover:bg-white/10 border border-white/10">
-                        <Github className="h-5 w-5" />
-                      </a>
-                    )}
-                    {project.live && project.live !== "#" && (
-                      <a href={project.live} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors bg-white/5 p-2.5 rounded-full hover:bg-white/10 border border-white/10">
-                        <ExternalLink className="h-5 w-5" />
-                      </a>
-                    )}
-                  </div>
+                    <div className={`relative h-12 w-12 rounded-xl flex items-center justify-center bg-gradient-to-br ${project.color} shadow-lg overflow-hidden border border-white/20`}>
+                        {project.logo ? (
+                            <Image src={project.logo} alt={`${project.title} logo`} fill className="object-cover" />
+                        ) : (
+                            <span className="font-bold text-white text-xl">{project.title[0]}</span>
+                        )}
+                    </div>
+                    <div className="flex gap-3">
+                        {project.github && project.github !== "#" && (
+                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors bg-white/5 p-2.5 rounded-full hover:bg-white/10 border border-white/10">
+                                <Github className="h-5 w-5" />
+                            </a>
+                        )}
+                        {project.live && project.live !== "#" && (
+                            <a href={project.live} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors bg-white/5 p-2.5 rounded-full hover:bg-white/10 border border-white/10">
+                                <ExternalLink className="h-5 w-5" />
+                            </a>
+                        )}
+                    </div>
                 </div>
 
                 <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-slate-300 transition-all">
