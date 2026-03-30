@@ -34,6 +34,16 @@ const advancedProjects = [
         github: "https://github.com/MatheusCampagnolo/tech-sentinel",
         //live: "#",
         color: "from-purple-500 to-indigo-500",
+    },
+    {
+        title: "ComSenso - Enquetes Online em Tempo Real",
+        description: "Plataforma de enquetes em tempo real via WebSockets com resultados instantâneos. Possui autenticação social, gestão de perfis e controle de privacidade, unindo design moderno a uma experiência de alta performance.",
+        tech: ["React", "Supabase", "TailwindCSS", "Motion", "TypeScript", "Vite"],
+        //github: "#",
+        live: "https://comsenso.matthcodes.dev",
+        color: "from-orange-500 to-orange-700",
+        image: "/projects/comsenso.png",
+        logo: "/logos/comsenso.svg",
     }
 ];
 
