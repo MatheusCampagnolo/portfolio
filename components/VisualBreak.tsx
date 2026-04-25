@@ -61,7 +61,10 @@ export function VisualBreak() {
 					)}
 				/>
 				<h2 className="text-center text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-500">
-					Inovação
+					<span className="block">"Primeiro, resolva o problema.</span>
+					<span className="block">Depois, escreva o código."</span>
+					<br></br>
+					<span className="mt-4 block">– John Johnson</span>
 				</h2>
 			</div>
 			<ZoomParallax images={images} />
