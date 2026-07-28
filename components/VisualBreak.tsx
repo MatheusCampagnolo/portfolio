@@ -1,74 +1,41 @@
 'use client';
 
-import React from 'react';
 import { cn } from '@/lib/utils';
-import Lenis from '@studio-freight/lenis'
-import { ZoomParallax } from "@/components/ui/zoom-parallax";
 
 export function VisualBreak() {
-
-	React.useEffect(() => {
-		const lenis = new Lenis()
-
-		function raf(time: number) {
-			lenis.raf(time)
-			requestAnimationFrame(raf)
-		}
-
-		requestAnimationFrame(raf)
-	}, [])
-
-	const images = [
-		{
-			src: '/projects/kaelum.png',
-			alt: 'Kaelum Framework',
-		},
-		{
-			src: '/projects/photo_model.png',
-			alt: 'Projeto Fotografia',
-		},
-		{
-			src: 'https://www.shutterstock.com/shutterstock/videos/3889963451/thumb/1.jpg?ip=x480',
-			alt: 'Código',
-		},
-		{
-			src: '/projects/techsentinel.png',
-			alt: 'Projeto Tech Sentinel',
-		},
-		{
-			src: '/projects/odonto2.png',
-			alt: 'Projeto OdontoLumi',
-		},
-		{
-			src: '/projects/pizza_model.png',
-			alt: 'Projeto Pizzaria',
-		},
-		{
-			src: '/projects/sushi.png',
-			alt: 'Projeto Sushi',
-		},
-	];
-
 	return (
-		<section className="hidden md:block min-h-screen w-full bg-black">
-			<div className="relative flex h-[50vh] items-center justify-center">
+		<section className="hidden md:block relative w-full bg-black py-32">
+			{/* Radial glow */}
+			<div
+				aria-hidden="true"
+				className={cn(
+					'pointer-events-none absolute inset-0 flex items-center justify-center',
+				)}
+			>
 				<div
-					aria-hidden="true"
 					className={cn(
-						'pointer-events-none absolute -top-1/2 left-1/2 h-[120vmin] w-[120vmin] -translate-x-1/2 rounded-full',
-						'bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.15),transparent_50%)]',
+						'h-[120vmin] w-[120vmin] rounded-full',
+						'bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.15),transparent_60%)]',
 						'blur-[30px]',
 					)}
 				/>
+			</div>
+
+			{/* Quote text */}
+			<div className="relative z-10 flex items-center justify-center">
 				<h2 className="text-center text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-500">
-					<span className="block">"Primeiro, resolva o problema.</span>
-					<span className="block">Depois, escreva o código."</span>
-					<br></br>
+					<span className="block">&ldquo;Primeiro, resolva o problema.</span>
+					<span className="block">Depois, escreva o código.&rdquo;</span>
+					<br />
 					<span className="mt-4 block">– John Johnson</span>
 				</h2>
 			</div>
-			<ZoomParallax images={images} />
-			<div className="h-[20vh]" />
+
+			{/* Bottom fade — blends glow into the black section below */}
+			<div
+				aria-hidden="true"
+				className="pointer-events-none absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-black"
+			/>
 		</section>
 	);
 }
