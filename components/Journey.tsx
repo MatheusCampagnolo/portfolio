@@ -1,28 +1,61 @@
 "use client";
 
 import { Timeline } from "@/components/ui/timeline";
-import { Code2, Cpu, Globe, Terminal } from "lucide-react";
+import { Briefcase, Code2, Cpu, Globe, Terminal } from "lucide-react";
 
 export function Journey() {
   const data = [
     {
-      title: "2026 - Presente",
+      title: "2026 — Presente",
       content: (
         <div>
           <p className="text-neutral-300 text-sm md:text-base font-normal mb-8">
-            Consultor Web Autônomo e Estudante de Ciência da Computação (Max Planck).
+            Estágio na John Deere &amp; Consultoria Web Autônoma.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-              <Globe className="w-8 h-8 text-emerald-400 mb-4" />
-              <h4 className="text-lg font-bold text-white mb-2">Consultor Web</h4>
-              <p className="text-slate-400 text-sm">Entregando landing pages e sites institucionais sob medida para clientes B2B e B2C, com foco extremo em performance e SEO.</p>
+              <Briefcase className="w-8 h-8 text-green-400 mb-4" />
+              <h4 className="text-lg font-bold text-white mb-2">
+                Estágio — Desenvolvedor Full Stack
+              </h4>
+              <p className="text-slate-400 text-sm">
+                Atuando na área de ISG da John Deere, desenvolvendo soluções
+                corporativas com Node.js e TypeScript. Contribuindo no ciclo
+                completo de desenvolvimento — da arquitetura de APIs à entrega
+                de features em ambiente de grande escala.
+              </p>
             </div>
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-              <Cpu className="w-8 h-8 text-blue-400 mb-4" />
-              <h4 className="text-lg font-bold text-white mb-2">Ciência da Computação</h4>
-              <p className="text-slate-400 text-sm">Aprofundamento nos fundamentos teóricos da computação, engenharia de software e desenvolvimento de sistemas embarcados.</p>
+              <Globe className="w-8 h-8 text-emerald-400 mb-4" />
+              <h4 className="text-lg font-bold text-white mb-2">Consultor Web</h4>
+              <p className="text-slate-400 text-sm">
+                Entregando landing pages e sites institucionais sob medida para
+                clientes B2B e B2C, com foco extremo em performance e SEO.
+              </p>
             </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2026",
+      content: (
+        <div>
+          <p className="text-neutral-300 text-sm md:text-base font-normal mb-8">
+            Início da graduação em Ciência da Computação.
+          </p>
+          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+            <Cpu className="w-8 h-8 text-blue-400 mb-4" />
+            <h4 className="text-lg font-bold text-white mb-2">
+              Ciência da Computação
+            </h4>
+            <p className="text-slate-400 text-sm">
+              Cursando Bacharelado em Ciência da Computação na Max Planck, com
+              foco em construir uma base teórica sólida em fundamentos de
+              computação, engenharia de software, estrutura de dados e
+              desenvolvimento de sistemas — preparando terreno para atuar na
+              fronteira entre tecnologia e inovação.
+            </p>
           </div>
         </div>
       ),
@@ -32,18 +65,22 @@ export function Journey() {
       content: (
         <div>
           <p className="text-neutral-300 text-sm md:text-base font-normal mb-8">
-            Criador do Kaelum & Iniciação Científica.
+            Criador do Kaelum &amp; Iniciação Científica.
           </p>
           <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
             <Terminal className="w-8 h-8 text-purple-400 mb-4" />
             <h4 className="text-lg font-bold text-white mb-2">Kaelum Framework</h4>
-            <p className="text-slate-400 text-sm">Desenvolvimento do framework Node.js minimalista (Kaelum) como iniciação científica no IFSP, simplificando a criação de APIs e páginas com SSR nativo.</p>
+            <p className="text-slate-400 text-sm">
+              Desenvolvimento do framework Node.js minimalista (Kaelum) como
+              iniciação científica no IFSP, simplificando a criação de APIs e
+              páginas com SSR nativo.
+            </p>
           </div>
         </div>
       ),
     },
     {
-      title: "2023 - 2025",
+      title: "2023 — 2025",
       content: (
         <div>
           <p className="text-neutral-300 text-sm md:text-base font-normal mb-8">
@@ -52,7 +89,11 @@ export function Journey() {
           <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
             <Code2 className="w-8 h-8 text-indigo-400 mb-4" />
             <h4 className="text-lg font-bold text-white mb-2">Formação Técnica</h4>
-            <p className="text-slate-400 text-sm">Imersão pesada em desenvolvimento Full Stack e Engenharia de Software. Base sólida pavimentada em Java, Python, JavaScript, Node.js, Spring Boot e relacionais como PostgreSQL.</p>
+            <p className="text-slate-400 text-sm">
+              Imersão pesada em desenvolvimento Full Stack e Engenharia de
+              Software. Base sólida pavimentada em Java, Python, JavaScript,
+              Node.js, Spring Boot e relacionais como PostgreSQL.
+            </p>
           </div>
         </div>
       ),
