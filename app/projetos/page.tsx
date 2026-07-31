@@ -49,6 +49,15 @@ const advancedProjects = [
 
 const webDevProjects = [
     {
+        title: "GLACÉ - Gelato Studio Artesanal",
+        description: "Landing page interativa e de alto impacto para gelaterias, sorveterias e confeitarias artesanais, com simulador de pedidos e quiz de sabores. Design clean, moderno e responsivo, com animações fluidas de scroll e paleta de cores focada em frescor e sofisticação.",
+        tech: ["Next.js", "React", "TailwindCSS", "Motion", "TypeScript"],
+        //github: "#",
+        live: "https://landing-gelato.vercel.app/",
+        color: "from-slate-800 to-slate-950",
+        image: "/projects/gelato-model.png",
+    },
+    {
         title: "EngPrime - Engenharia Diagnóstica",
         description: "Landing page EXEMPLO premium para serviços de engenharia diagnóstica, perícias e avaliações. Design clean e corporativo com animações fluidas de scroll, glassmorphism e paleta de cores focada em confiança e precisão técnica.",
         tech: ["Next.js", "React", "TailwindCSS", "Framer Motion", "TypeScript"],
